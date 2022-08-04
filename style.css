@@ -1,20 +1,38 @@
 .container {
-  width: 700px;
+  width: 450px;
   margin: 40px auto;
+
+}
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }
 
 div {
   display: block;
 }
 
-.card-white {
-  background-color: white;
+.card-white-one {
+  /* background-color: rgb(80, 204, 220); */
+  /* background: rgb(26,16,193); */
+  background: radial-gradient(circle, rgba(25, 16, 193, 0.326) 0%, rgba(173, 173, 253, 0.317) 71%, rgba(145, 237, 255, 0.34) 100%);
   padding: 40px;
   box-shadow: 0px 10px 30px rgb(0 0 0 / 10%);
-  border-radius: 4px;
+  border-radius: 5%;
   margin: 20px 0px;
   text-align: center;
 }
+
+.card-white-two {
+  /* background-color: rgb(80, 204, 220); */
+  /* background: rgb(26,16,193); */
+  background: none;
+  padding: 1%;
+  margin: auto;
+  text-align: center;
+
+}
+
 
 body {
   background: #F7F9FC;
@@ -28,10 +46,42 @@ img {
   border-radius: 50%;
 }
 
+.avatar:hover {
+  animation: rotation 1.2s infinite linear;
+
+}
+
+
+
+
 h1 {
   color: aqua;
   line-height: 80%;
+  animation: animated-text 4s steps(29,end) 1s 1 normal both, animated-cursor 600ms steps(29,end) infinite;
 }
+
+h2 {
+  color: aqua;
+  font-family: 'Roboto', sans-serif;
+  line-height: 80%;
+}
+
+h2:hover span {
+  display:none;
+}
+
+h2:hover:before {
+  content:"BOO";
+  font-size: xx-large;
+}
+
+/* h2::before {
+  content:'FOLLOW ME';
+}
+
+h2:hover::after {
+  content:'!JUMPSCARE!';
+} */
 
 .list-inline {
   list-style: none;
@@ -49,16 +99,25 @@ ul {
 }
 
 .btn-blue {
-  background-color: #6B72E1;
-  color: white;
+  background-color: none;
+  color: none;
   padding: 15px 20px;
   border-radius: 4px;
+
+}
+
+#my_link {
+  box-shadow: 0px 10px 30px rgb(0 0 0 / 10%);
+  border-radius: 5%;
+  width:fit-content;
+  margin:auto;
+  text-align: center;
 }
 
 a {
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
-  color: #6B72E1;
+  color: #00fff7;
   font-weight: 600;
   font-size: 16px;
 }
@@ -66,21 +125,58 @@ a {
 @media (max-width: 960px) {
   /* For a screen < 960px, this CSS will be read */
   .container {
-    width: 700px;
+    width: 80%;
   }
 }
 
 @media (max-width: 720px) {
   /* For a screen < 720px, this CSS will be read */
   .container {
-    width: 500px;
+    width: 70%;
   }
 }
 
 @media (max-width: 540px) {
   /* For a screen < 540px, this CSS will be read */
   .container {
-    width: 300px;
+    width: 70%;
   }
 }
 
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 30px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
